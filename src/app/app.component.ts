@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CoordinatesService} from './coordinates.service';
+import {Coordinate} from './project/coordinate/coordinate.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [CoordinatesService]
 })
-export class AppComponent {
-  title = 'geodesy-help-view';
+export class AppComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
 }
