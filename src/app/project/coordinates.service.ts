@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Coordinate} from './project/coordinate/coordinate.model';
+import {Coordinate} from './coordinate/coordinate.model';
 
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Coordinate} from '../project/coordinate/coordinate.model';
-import {CoordinatesService} from '../coordinates.service';
+import {CoordinatesService} from '../project/coordinates.service';
 
 @Component({
   selector: 'app-home',
