@@ -1,22 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Coordinate} from '../project/coordinate/coordinate.model';
-import {CoordinatesService} from '../project/coordinates.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  providers: [CoordinatesService]
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
-  coordinates: Coordinate[] = [];
-  constructor(private coordinatesService: CoordinatesService) { }
+  constructor() { }
 
   ngOnInit() {
-    // this.coordinates = this.coordinatesService.coordinates;
-    this.coordinatesService.getCoordinates().subscribe((coordinates: Coordinate[]) => {
-      this.coordinates = coordinates;
-    });
   }
 }

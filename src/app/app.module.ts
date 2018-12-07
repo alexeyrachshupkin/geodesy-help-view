@@ -10,6 +10,7 @@ import { CreateProjectFormComponent } from './project/create-project-form/create
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProjectComponent } from './project/project.component';
 import { HomeComponent } from './home/home.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

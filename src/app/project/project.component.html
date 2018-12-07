@@ -1,3 +1,12 @@
-<p>
-  project works!
-</p>
+<div class="row">
+  <div class="col-sm">
+    <table class="table">
+      <thead>
+      <app-coordinate
+        *ngFor="let coordinate of coordinates"
+        [coordinate]="coordinate"
+      ></app-coordinate>
+      </thead>
+    </table>
+  </div>
+</div>
