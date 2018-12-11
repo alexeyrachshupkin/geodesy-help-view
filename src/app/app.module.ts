@@ -10,7 +10,12 @@ import { CreateProjectFormComponent } from './project/create-project-form/create
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProjectComponent } from './project/project.component';
 import { HomeComponent } from './home/home.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
+import { ProjectCardsComponent } from './project/project-cards/project-cards.component';
+import { ProjectCardComponent } from './project/project-cards/project-card/project-card.component';
+import { InputDataComponent } from './project/input-data/input-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,10 @@ import {FormsModule} from '@angular/forms';
     CoordinateComponent,
     CreateProjectFormComponent,
     ProjectComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectCardsComponent,
+    ProjectCardComponent,
+    InputDataComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,10 @@ import {FormsModule} from '@angular/forms';
     ModalModule.forRoot(),
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    NgBootstrapFormValidationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

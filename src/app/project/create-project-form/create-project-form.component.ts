@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbDateAdapter, NgbDateNativeAdapter, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateAdapter, NgbDateNativeAdapter, NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {ModelNewProject} from './model.new-project';
 import {ProjectService} from '../project.service';
 import {ProjectFile} from './model.project-file';
+import {ModelResponseSaveProject} from './model.response-save-project';
+import {NgxSpinnerService} from 'ngx-spinner';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-project-form',
@@ -13,10 +16,10 @@ import {ProjectFile} from './model.project-file';
 export class CreateProjectFormComponent implements OnInit {
 
   fileToUpload: any = null;
+  formGroup: FormGroup;
+  project:ModelNewProject;
 
-  project:ModelNewProject = new ModelNewProject();
-
-  constructor(private modalService: NgbModal, private projectService: ProjectService) { }
+  constructor(private modalService: NgbModal, private projectService: ProjectService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
   }
@@ -39,17 +42,33 @@ export class CreateProjectFormComponent implements OnInit {
   }
 
   open(content) {
+    this.formGroup = new FormGroup({
+      Name: new FormControl('', [
+        Validators.required
+      ]),
+      Date: new FormControl('', [
+        Validators.required
+      ]),
+      File: new FormControl('', [
+        Validators.required])
+    });
+    this.project = new ModelNewProject();
+    this.project.projectFile = new ProjectFile();
+    this.project.date = new Date();
     this.modalService.open(content, { windowClass: 'dark-modal' });
   }
 
-  createProject() {
+  createProject(modal) {
+    this.spinner.show();
     this.project.projectFile.base64=this.fileToUpload;
     console.log(this.project)
-    let result;
+    let response: ModelResponseSaveProject;
     this.projectService.createProject(this.project).subscribe(res=>{
-      result = res;
+      response = res;
     });
-    console.log(result)
+    this.spinner.hide();
+    modal.close("Close click");
+    console.log(response);
   }
 
 }

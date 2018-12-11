@@ -10,16 +10,21 @@
         <a class="nav-link" routerLink="home">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="project">Projects</a>
+        <a class="nav-link" routerLink="projects">Projects</a>
       </li>
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid bg-light h-100">
     <router-outlet></router-outlet>
+  <ngx-spinner
+    bdColor = "rgba(51, 51, 51, 0.8)"
+    size = "default"
+    color = "#007bff"
+    type = "line-scale-pulse-out"></ngx-spinner>
 </div>
 <footer class="footer bg-dark">
   <div class="container">
-    <span class="text-muted">Special for NikitaDorosh</span>
+    <span class="text-muted float-right">Special for NikitaDorosh</span>
   </div>
 </footer>
