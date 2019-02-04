@@ -1,3 +1,20 @@
-<p>
-  input-data works!
-</p>
+<button class="btn btn-primary" type="button" (click)="downloadFile()">Download</button>
+<hr/>
+<div class="container scrollable">
+  <div class="row">
+    <div class="col-sm">
+      name
+    </div>
+    <div class="col-sm">
+      x
+    </div>
+    <div class="col-sm">
+      y
+    </div>
+    <div class="col-sm">
+      z
+    </div>
+  </div>
+  <app-coordinate *ngFor="let c of coordinates"
+                  [coordinate]="c"></app-coordinate>
+</div>

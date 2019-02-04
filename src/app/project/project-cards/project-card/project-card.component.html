@@ -1,7 +1,7 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{projectItem.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{projectItem.date}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{pipe.transform(projectItem.date,'dd.MM.yyyy HH:mm')}}</h6>
     <p class="card-text">File name: {{projectItem.projectFile.name}}</p>
     <a [routerLink]="['/project', projectItem.id]" class="card-link">Open project</a>
   </div>

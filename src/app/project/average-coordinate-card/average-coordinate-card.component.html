@@ -1,0 +1,35 @@
+<div class="col col-lg-5">
+  <div class="card" style="width: 25rem; min-height: 15rem">
+    <div class="card-body">
+      <div class="row font-weight-bold">
+        <div class="col-sm">
+          name
+        </div>
+        <div class="col-sm">
+          x
+        </div>
+        <div class="col-sm">
+          y
+        </div>
+        <div class="col-sm">
+          z
+        </div>
+      </div>
+      <app-coordinate *ngFor="let coordinate of averageCoordinate.coordinateList" [coordinate]="coordinate"></app-coordinate>
+      <div class="row font-weight-bold average-coordinate">
+        <div class="col-sm">
+          {{averageCoordinate.average.name}}
+        </div>
+        <div class="col-sm">
+          {{averageCoordinate.average.x}}
+        </div>
+        <div class="col-sm">
+          {{averageCoordinate.average.y}}
+        </div>
+        <div class="col-sm">
+          {{averageCoordinate.average.z}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

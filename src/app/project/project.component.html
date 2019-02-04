@@ -9,7 +9,9 @@
       <a class="list-group-item bg-secondary text-white list-group-item-action" id="list-home-list"
          [routerLink]="['/project/'+projectItem.id, {outlets: {menu: ['input-data']}}]"
          data-toggle="list" role="tab" aria-controls="home">Input data</a>
-      <a class="list-group-item bg-secondary text-white list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+      <a class="list-group-item bg-secondary text-white list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab"
+         [routerLink]="['/project/'+projectItem.id, {outlets: {menu: ['sorted-data']}}]" aria-controls="profile">
+        Sorted data</a>
       <a class="list-group-item bg-secondary text-white list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
       <a class="list-group-item bg-secondary text-white list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
     </div>
@@ -17,4 +19,9 @@
   <div class="col-11 ">
     <router-outlet name="menu"></router-outlet>
   </div>
+  <ngx-spinner
+    bdColor = "rgba(51, 51, 51, 0.8)"
+    size = "default"
+    color = "#007bff"
+    type = "line-scale-pulse-out"></ngx-spinner>
 </div>

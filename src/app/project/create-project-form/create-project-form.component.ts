@@ -6,6 +6,7 @@ import {ProjectFile} from './model.project-file';
 import {ModelResponseSaveProject} from './model.response-save-project';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Coordinate} from '../coordinate/coordinate.model';
 
 @Component({
   selector: 'app-create-project-form',
@@ -41,7 +42,7 @@ export class CreateProjectFormComponent implements OnInit {
     myReader.readAsDataURL(file);
   }
 
-  open(content) {
+  async open (content) {
     this.formGroup = new FormGroup({
       Name: new FormControl('', [
         Validators.required

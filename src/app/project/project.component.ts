@@ -5,6 +5,7 @@ import {ModelNewProject} from './create-project-form/model.new-project';
 import {ProjectService} from './project.service';
 import {ActivatedRoute} from '@angular/router';
 import {DatePipe} from '@angular/common';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-project',
@@ -16,7 +17,7 @@ export class ProjectComponent implements OnInit {
 
   projectItem: ModelNewProject;
   pipe = new DatePipe('en-US');
-  constructor(private projectService: ProjectService,private route: ActivatedRoute) { }
+  constructor(private projectService: ProjectService,private route: ActivatedRoute,public spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.projectItem = new ModelNewProject();
@@ -25,7 +26,6 @@ export class ProjectComponent implements OnInit {
       id = params.get('id');
     })
     this.projectService.findById(id).subscribe((project:ModelNewProject)=>{
-      console.log(project);
       this.projectItem = project;
     });
   }

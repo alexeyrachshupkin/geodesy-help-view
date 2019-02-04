@@ -16,6 +16,9 @@ import {NgBootstrapFormValidationModule} from 'ng-bootstrap-form-validation';
 import { ProjectCardsComponent } from './project/project-cards/project-cards.component';
 import { ProjectCardComponent } from './project/project-cards/project-card/project-card.component';
 import { InputDataComponent } from './project/input-data/input-data.component';
+import { UploadComponent } from './project/file/upload/upload.component';
+import { SortedDataComponent } from './project/sorted-data/sorted-data.component';
+import { AverageCoordinateCardComponent } from './project/average-coordinate-card/average-coordinate-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { InputDataComponent } from './project/input-data/input-data.component';
     HomeComponent,
     ProjectCardsComponent,
     ProjectCardComponent,
-    InputDataComponent
+    InputDataComponent,
+    UploadComponent,
+    SortedDataComponent,
+    AverageCoordinateCardComponent
   ],
   imports: [
     BrowserModule,

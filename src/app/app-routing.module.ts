@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {ProjectCardsComponent} from './project/project-cards/project-cards.component';
 import {CoordinateComponent} from './project/coordinate/coordinate.component';
 import {InputDataComponent} from './project/input-data/input-data.component';
+import {SortedDataComponent} from './project/sorted-data/sorted-data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'project/:id',
     component: ProjectComponent,
     children: [
-      { path: 'input-data', component: InputDataComponent, outlet: 'menu' }
+      { path: 'input-data', component: InputDataComponent, outlet: 'menu' },
+      { path: 'sorted-data', component: SortedDataComponent, outlet: 'menu' }
       ]
   },
 ];
